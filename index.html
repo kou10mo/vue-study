@@ -9,10 +9,23 @@
 <body>
   <div id="app">
     <p>{{ message }}</p>
+    <!-- v-bind,省略可 -->
+    <p v-bind:data="message">{{ message }}</p>
+    <p :data="message">{{ message }}</p>
+    <!-- domプロパティ -->
+    <p v-bind:text-content.prop="message"></p>
+    <p v-bind:abc-xyz-xxx.camel="message">Abc</p>
+
     <ul>
       <li v-for="item in list">{{ item }}</li>
     </ul>
-    <button v-on:click="handleClick">Alert</button>
+    <button v-on:click="increment">[+1]</button>
+    <p>{{ count }}回</p>
+
+    <!-- debug -->
+    <pre>{{ $data }}</pre>
+
+    <p style="width:100px;height:100px;overflow-y:scroll;border:1px solid #222;" v-bind:scroll-top.prop="scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. At illum deleniti recusandae! Libero nemo perspiciatis, sapiente commodi, a praesentium, quos aliquid rem quod minus nostrum architecto? Vel recusandae velit in?</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script src="./js/main.js"></script>
