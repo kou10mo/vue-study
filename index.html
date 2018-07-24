@@ -19,8 +19,8 @@
     <ul>
       <li v-for="item in list">{{ item }}</li>
     </ul>
-    <button v-on:click="increment">[+1]</button>
-    <p>{{ count }}回</p>
+    <button v-for="num in buttonNums" v-on:click="increment(num)">{{ num }}</button>
+    <p>{{ scroll }}位置</p>
 
     <!-- debug -->
     <pre>{{ $data }}</pre>
